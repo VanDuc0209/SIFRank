@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Sponge"
 # Date: 2019/6/25
-
+import sys
+sys.path.append('.')
+sys.path.append('..')
 import nltk
 from embeddings import sent_emb_sif, word_emb_elmo
 from model.method import SIFRank, SIFRank_plus
@@ -64,7 +66,7 @@ weight_file = "../auxiliary_data/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5"
 porter = nltk.PorterStemmer()#please download nltk
 ELMO = word_emb_elmo.WordEmbeddings(options_file, weight_file, cuda_device=0)
 SIF = sent_emb_sif.SentEmbeddings(ELMO, lamda=lamda, database=database)
-en_model = StanfordCoreNLP(r'E:\Python_Files\stanford-corenlp-full-2018-02-27',quiet=True)#download from https://stanfordnlp.github.io/CoreNLP/
+en_model = StanfordCoreNLP('../stanford-corenlp-full-2018-10-05',quiet=True)#download from https://stanfordnlp.github.io/CoreNLP/
 
 try:
     for key, data in data.items():
