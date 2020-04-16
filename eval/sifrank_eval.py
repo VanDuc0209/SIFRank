@@ -60,8 +60,8 @@ else:
     elmo_layers_weight = [1.0, 0.0, 0.0]
 
 #download from https://allennlp.org/elmo
-options_file = "../auxiliary_data/elmo_2x4096_512_2048cnn_2xhighway_options.json"
-weight_file = "../auxiliary_data/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5"
+options_file = "/content/drive/My Drive/20192/SIFRank/auxiliary_data/elmo_2x4096_512_2048cnn_2xhighway_options.json"
+weight_file = "/content/drive/My Drive/20192/SIFRank/auxiliary_data/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5"
 
 porter = nltk.PorterStemmer()#please download nltk
 ELMO = word_emb_elmo.WordEmbeddings(options_file, weight_file, cuda_device=0)
